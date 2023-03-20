@@ -18,3 +18,5 @@ This is a work/study in progress. I would still like to create exception handlin
 I would also like to implement a DLL engineering approach for the business rules since legacy VB6 systems often run out of memory due to excessive code in the main project. 
 
 I have also considered a few other implementations.
+
+The idea is to only establish a database connection during operations and use separate classes to communicate with the database. Repositories are organized by entity and communicate with these classes. The entities themselves only store their properties. Forms communicate with the business logic through ViewModel classes.
