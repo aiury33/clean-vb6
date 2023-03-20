@@ -1,0 +1,17 @@
+StartVisual = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+StorageVisual = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+StartVisualViewModel = 0, 0, 0, 0, C
+StorageVisualViewModel = 0, 0, 0, 0, C
+DatabaseConnection = 0, 0, 0, 0, C
+DatabaseFinder = 0, 0, 0, 0, C
+DatabaseInserter = 0, 0, 0, 0, C
+Company = 0, 0, 0, 0, C
+Movement = 0, 0, 0, 0, C
+Product = 0, 0, 0, 0, C
+CurrencyFormat = 0, 0, 0, 0, C
+FloatFormat = 0, 0, 0, 0, C
+StorageMaintainence = 0, 0, 0, 0, C
+CompanyRepository = 52, 52, 1948, 712, 
+MovementRepository = 0, 0, 0, 0, C
+ProductRepository = 0, 0, 0, 0, C
+Init = 0, 0, 0, 0, C

@@ -33,7 +33,7 @@ Public Property Let SetPassword(password As String)
     
 End Property
 
-Public Function connected() As Boolean
+Public Function Connected() As Boolean
 
     Dim cn As ADODB.Connection
     
@@ -41,7 +41,7 @@ Public Function connected() As Boolean
     
     Set cn = GetConnection()
     
-    connected = True
+    Connected = True
     
 err:
 End Function
@@ -62,4 +62,3 @@ Private Function GetConnectionString() As String
     GetConnectionString = "Provider=SQLOLEDB.1;Persist Security Info=False;User ID=" & mLogin & ";Password=" & mPassword & ";Initial Catalog=clean;Data Source=" & mServer
 
 End Function
-

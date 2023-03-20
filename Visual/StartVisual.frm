@@ -18,7 +18,7 @@ Begin VB.Form StartVisual
       Appearance      =   0  'Flat
       Height          =   615
       Left            =   480
-      TabIndex        =   5
+      TabIndex        =   0
       Top             =   600
       Width           =   3615
    End
@@ -27,7 +27,7 @@ Begin VB.Form StartVisual
       Caption         =   "Connect"
       Height          =   375
       Left            =   3000
-      TabIndex        =   4
+      TabIndex        =   3
       Top             =   3720
       Width           =   1095
    End
@@ -35,7 +35,7 @@ Begin VB.Form StartVisual
       Appearance      =   0  'Flat
       Height          =   615
       Left            =   480
-      TabIndex        =   1
+      TabIndex        =   2
       Top             =   2880
       Width           =   3615
    End
@@ -43,7 +43,7 @@ Begin VB.Form StartVisual
       Appearance      =   0  'Flat
       Height          =   615
       Left            =   480
-      TabIndex        =   0
+      TabIndex        =   1
       Top             =   1680
       Width           =   3615
    End
@@ -65,7 +65,7 @@ Begin VB.Form StartVisual
       ForeColor       =   &H80000008&
       Height          =   255
       Left            =   480
-      TabIndex        =   3
+      TabIndex        =   5
       Top             =   2520
       Width           =   1455
    End
@@ -76,7 +76,7 @@ Begin VB.Form StartVisual
       ForeColor       =   &H80000008&
       Height          =   255
       Left            =   480
-      TabIndex        =   2
+      TabIndex        =   4
       Top             =   1320
       Width           =   1455
    End
@@ -86,6 +86,8 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Private viewModel As New StartVisualViewModel
+
 Private Sub ConnectButton_Click()
     
     ConnectToDatabase
@@ -94,20 +96,19 @@ End Sub
 
 Private Sub ConnectToDatabase()
 
-    Dim viewModel As New StartVisualViewModel
-    Dim connected As Boolean
+    Dim Connected As Boolean
     
-    SetLoginData viewModel
+    SetLoginData
     
-    connected = viewModel.ConnectToDatabase
+    Connected = viewModel.ConnectToDatabase
     
-    ShowMessageByStatus connected
+    ShowMessageByStatus Connected
     
-    ExitWhenSuccess connected
+    ExitWhenSuccess Connected
 
 End Sub
 
-Private Sub SetLoginData(viewModel As StartVisualViewModel)
+Private Sub SetLoginData()
 
     viewModel.SetServer = ServerText.Text
     viewModel.SetLogin = LoginText.Text
@@ -115,9 +116,9 @@ Private Sub SetLoginData(viewModel As StartVisualViewModel)
 
 End Sub
 
-Private Sub ExitWhenSuccess(connected As Boolean)
+Private Sub ExitWhenSuccess(Connected As Boolean)
 
-    If connected Then
+    If Connected Then
     
         Unload Me
         
@@ -125,11 +126,11 @@ Private Sub ExitWhenSuccess(connected As Boolean)
     
 End Sub
 
-Private Sub ShowMessageByStatus(connected As Boolean)
+Private Sub ShowMessageByStatus(Connected As Boolean)
     
     Dim messageToShow As String
     
-    If connected Then
+    If Connected Then
     
         messageToShow = "Success."
         
