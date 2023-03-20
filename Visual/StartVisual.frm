@@ -96,15 +96,15 @@ End Sub
 
 Private Sub ConnectToDatabase()
 
-    Dim Connected As Boolean
+    Dim connected As Boolean
     
     SetLoginData
     
-    Connected = viewModel.ConnectToDatabase
+    connected = viewModel.ConnectToDatabase
     
-    ShowMessageByStatus Connected
+    ShowMessageByStatus connected
     
-    ExitWhenSuccess Connected
+    ExitWhenSuccess connected
 
 End Sub
 
@@ -116,9 +116,9 @@ Private Sub SetLoginData()
 
 End Sub
 
-Private Sub ExitWhenSuccess(Connected As Boolean)
+Private Sub ExitWhenSuccess(connected As Boolean)
 
-    If Connected Then
+    If connected Then
     
         Unload Me
         
@@ -126,11 +126,11 @@ Private Sub ExitWhenSuccess(Connected As Boolean)
     
 End Sub
 
-Private Sub ShowMessageByStatus(Connected As Boolean)
+Private Sub ShowMessageByStatus(connected As Boolean)
     
     Dim messageToShow As String
     
-    If Connected Then
+    If connected Then
     
         messageToShow = "Success."
         
