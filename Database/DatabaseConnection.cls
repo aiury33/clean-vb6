@@ -33,7 +33,7 @@ Public Property Let SetPassword(password As String)
     
 End Property
 
-Public Function Connected() As Boolean
+Public Function ItsPossibleToConnect() As Boolean
 
     Dim cn As ADODB.Connection
     
@@ -41,7 +41,7 @@ Public Function Connected() As Boolean
     
     Set cn = GetConnection()
     
-    Connected = True
+    ItsPossibleToConnect = True
     
 err:
 End Function

@@ -17,7 +17,7 @@ End Sub
 
 Private Sub LoadStorage()
     
-    If Database.Connected Then
+    If Database.ItsPossibleToConnect Then
     
         StorageVisual.Show
         

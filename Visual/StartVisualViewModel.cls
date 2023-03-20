@@ -51,7 +51,7 @@ End Sub
 
 Private Function ValidateConnection() As Boolean
 
-    ValidateConnection = Database.Connected
+    ValidateConnection = Database.ItsPossibleToConnect
     
 End Function
 
